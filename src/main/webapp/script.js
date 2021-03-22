@@ -13,16 +13,14 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * function that retrieves the users's google id_token when they sign in
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function onSignIn(googleUser) {
+    // get user's googleId token which we will pass to the backend
+    var id_token = googleUser.getAuthResponse().id_token;
+    
+    const params = new URLSearchParams;
+    params.append('ID_token', id_token);
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    fetch('/sign-in', {method: 'POST', body: params});    
 }
