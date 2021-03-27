@@ -72,7 +72,6 @@
         <artifactId>google-api-client</artifactId>
         <version>1.11.0-beta</version>
     </dependency>
-    
   </dependencies>
 
   <build>

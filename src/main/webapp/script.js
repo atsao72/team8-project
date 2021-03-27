@@ -17,7 +17,7 @@
  */
 function onSignIn(googleUser) {
     // get user's googleId token which we will pass to the backend
-    var id_token = googleUser.getAuthResponse().id_token;
+    const id_token = googleUser.getAuthResponse().id_token;
     
     const params = new URLSearchParams;
     params.append('ID_token', id_token);
