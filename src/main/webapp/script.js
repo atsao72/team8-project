@@ -28,6 +28,6 @@ function createFileElement(file) {
   const nameElement = document.createElement('span');
   nameElement.innerText = file.fileName;
 
-  fileElement.appendChild(titleElement);
+  fileElement.appendChild(nameElement);
   return fileElement;
 }
