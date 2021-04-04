@@ -50,7 +50,7 @@ public class FileRetrieverServlet extends HttpServlet {
       String fileName = entity.getString("fileName");
       long timestamp = entity.getLong("timestamp");
 
-      File file = new File(fileName, timestamp);
+      File file = new File(id, fileName, timestamp);
       tasks.add(file);
     }
 
