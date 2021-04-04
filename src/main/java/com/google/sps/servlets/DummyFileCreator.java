@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
-/** Servlet responsible for creating new tasks. */
+/** Servlet responsible for creating new files. */
 @WebServlet("/new-dummy-file")
 public class NewDummyFileServlet extends HttpServlet {
 

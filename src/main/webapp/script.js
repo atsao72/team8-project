@@ -16,7 +16,7 @@ function loadFiles() {
   fetch('/uploaded-files').then(response => response.json()).then((files) => {
     const fileElement = document.getElementById('files-list');
     files.forEach((file) => {
-      fileElement.appendChild(createTaskElement(file));
+      fileElement.appendChild(createFileElement(file));
     })
   });
 }
@@ -28,6 +28,6 @@ function createFileElement(file) {
   const nameElement = document.createElement('span');
   nameElement.innerText = file.fileName;
 
-  taskElement.appendChild(titleElement);
-  return taskElement;
+  fileElement.appendChild(titleElement);
+  return fileElement;
 }

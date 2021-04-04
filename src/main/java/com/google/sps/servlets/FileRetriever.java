@@ -22,7 +22,7 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.gson.Gson;
-import com.google.sps.data.Task;
+import com.google.sps.data.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class FileRetrieverServlet extends HttpServlet {
       long timestamp = entity.getLong("timestamp");
 
       File file = new File(id, fileName, timestamp);
-      tasks.add(file);
+      files.add(file);
     }
 
     Gson gson = new Gson();
