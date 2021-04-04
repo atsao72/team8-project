@@ -12,17 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function loadFiles() {
+  fetch('/uploaded-files').then(response => response.json()).then((files) => {
+    const fileElement = document.getElementById('files-list');
+    files.forEach((file) => {
+      fileElement.appendChild(createTaskElement(file));
+    })
+  });
+}
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+function createFileElement(file) {
+  const fileElement = document.createElement('li');
+  fileElement.className = 'file';
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const nameElement = document.createElement('span');
+  nameElement.innerText = file.fileName;
+
+  taskElement.appendChild(titleElement);
+  return taskElement;
 }
