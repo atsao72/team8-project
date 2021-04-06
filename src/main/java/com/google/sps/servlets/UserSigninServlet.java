@@ -36,7 +36,7 @@ public class UserSigninServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
                 // Specify the CLIENT_ID of the app that accesses the backend:
-                .setClientIds("CLIENT_ID")
+                .setAudience(Collections.singletonList("424069108958-6vthh91e0fds1gf6b0lbg3ld75jocohu.apps.googleusercontent.com"))
                 .build();
 
         // (Receive idTokenString from the post POST)
@@ -54,18 +54,19 @@ public class UserSigninServlet extends HttpServlet {
             // Use payload to retrieve user information information
             Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
             KeyFactory keyFactory = datastore.newKeyFactory().setKind("User");
-            String userID = payload.getUserId();
-            FullEntity userEntity = Entity.newBuilder(keyFactory.newKey(userID))
+            String sub =  (String) payload.get("sub");
+            String userID = (String) payload.getSubject();
+            FullEntity userEntity = Entity.newBuilder(keyFactory.newKey(sub))
                                     .set("userID", userID)  
                                     .set("email", payload.getEmail())  
                                     .build();        
             datastore.put(userEntity);
 
             //redirect to userhomepage after successful signin
-            response.sendRedirect("/homepage.html");
+            response.sendRedirect("/index1.html");
         } else {
             //redirect back to signin page when sign in fails
-            response.sendRedirect("/index.html");
+            response.sendRedirect("/index1.html");
         }
   }
 }
