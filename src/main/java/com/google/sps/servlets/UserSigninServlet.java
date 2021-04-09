@@ -24,8 +24,7 @@ import com.google.cloud.datastore.KeyFactory;
 import java.io.IOException;
 
 /**
- * Handles requests sent to the /hello URL. Try running a server and navigating
- * to /hello!
+ * Handles requests sent to the /sign-in URL. 
  */
 @WebServlet("/sign-in")
 public class UserSigninServlet extends HttpServlet {
@@ -66,7 +65,7 @@ public class UserSigninServlet extends HttpServlet {
             response.sendRedirect("/index1.html");
         } else {
             //redirect back to signin page when sign in fails
-            response.sendRedirect("/index1.html");
+            response.sendRedirect("/index.html");
         }
   }
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sheon Mwapinza Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <img src="sheon_images/headshot.jpg" width="500" height="600"/>
+      <h1>Sheon Mwapinza <a href="https://www.linkedin.com/in/sheon-mwapinza-963518196/">LinkedIn</a>, <a href="https://github.com/sheonkuda">GitHub</a>.</h1>
+      <p>Choose language for quote of the day
+      <select id="language">
+          <option value="zh">Chinese</option>
+          <option value="en">English</option>
+          <option value="sn">Shona</option>
+      </select> <button onclick="requestTranslation();">Translate</button>
+      </p>
+      <button onclick="addRandomGreeting()">Quote Of The Day</button>
+      <p id="greeting-container"> </p>
+ 
+      <p> 
+          Hailing from the "City of Progress" Gweru, Zimbabwe! Growing up I dreamt of the Gweru that could be but,
+          it did not take me long to realise that everyone had the same dream and noone seemed to be doing anything to take us there, and that's when I decided to take matters into my own hands.
+          For the longest time I longed to transform my community through engineering which has led me to pursue an electrical engineering at the University of Pennsylvania. When I am not thinking about 
+          how I will change Zimbabwe, I play sports, chess, and I love playing with my baby brother.
+      </p>
+      <p>
+          Starting last year I embarked on a journey to provide a platform for the underappreciated arts in Zimbabwe 
+          so to raise awareness and motivate people to venture into the these disciplines. Together with three of my friends we started Zimries- 
+          Zimbabwean Diaries, a platform where people can share their poetry, articles, speaches and bring the Zimbabwean voice to the world. Inspired by 
+          by the work people were doing and the change and influence they were having in society, I wanted to also bring myvoice to the world and make an impact.
+          I wrote my first article, <a href="https://zimries.wordpress.com/2020/09/04/the-africa-we-want/">My African dream</a>. This marked the beginning of my journey as a writer, but I soon
+          realised I did not like writing and was also the end. 
+      </p>
+      <p>
+         My journey as a programmer has been most fulfulling. Nothing compares to the feeling that mauls you after spending an entire night
+         awake working on the SPS portfolio and are finally done. Although painful, there is a silver lining to these sleepless nights,
+         every hour spent working on the projects, homeworks, and assignemnt means more knowledge and experience gained. Some of the projects I 
+         have worked on are:
+      </p>
+
+         <p>Rapid Roll (CIS 120– Programming languages and techniques)<br>
+           &nbsp &nbsp •	Built an object-oriented Rapid Roll game using Java to implement the backend and Java swing library to implement the frontend<br>
+           &nbsp &nbsp •	The goal of the project was to get to accustomed to managing a project from ideation to design and implementation, and to gain more experience with backend and frontend development in Java<br>
+        <br> Penn-Pals (CIS 120– Programming languages and techniques) <br>
+           &nbsp &nbsp •	Built a messaging application for Penn Students using a client server<br>
+           &nbsp &nbsp •	Learnt backend implementation in Java which included creation and deletion of channels, adding and removing people to channels, sending messages, and handling server responses<br>
+         <br>Paint (CIS 120– Programming languages and techniques)<br>
+           &nbsp &nbsp •	Used Ocaml to develop the backend and GUI of a paint application (similar to Microsoft paint)<br>
+           &nbsp &nbsp •    Gained experience working with graphics contexts in Ocaml, implementation of various data structures such as: stacks, queues, heaps, etc and I also got exposure to backend and frontend development in Ocaml<br>
+         <br>Penn Electric Racing <br>
+            &nbsp &nbsp•	Worked on the electrical hardware team (16 people) to build and debug circuits, and design PCBs to be used in building an electric race car<br>
+            &nbsp &nbsp•	Designed and implemented the braking system of the car, and overcurrent and malfunction protection measures <br>
+      </p>
+      <p>Click here to to got to my <a href="sheon_images.html">Photo Gallery</a> Photo Gallery:)</p>
+
+      <button onclick="getFact();">Fact About ME</button> 
+      <p id="fact-id"> </p>
+    </div>
+
+    <form action="/form-handler" method="POST">
+        <p>Please leave some feedback:</p>
+        <textarea name="text-input">feedback...</textarea>
+        <br/>
+        <input type="submit" />
+    </form>
+  </body>
+</html>

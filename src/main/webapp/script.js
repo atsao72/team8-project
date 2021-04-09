@@ -22,5 +22,19 @@ function onSignIn(googleUser) {
     const params = new URLSearchParams;
     params.append('ID_token', id_token);
 
-    fetch('/sign-in', {method: 'POST', body: params});    
+    fetch('/sign-in', {method: 'POST', body: params})
+    .then(response => {
+       redirect();
+    });
+}
+
+/*
+ *function to handle redirecting the user to their homepage after a successfull sign in
+ */
+function redirect(){
+    fetch('/redirect', {method: 'POST'})
+        .then(response => {
+            //window.location.replace(response.url);
+            window.location.href = response.url;
+    });
 }
