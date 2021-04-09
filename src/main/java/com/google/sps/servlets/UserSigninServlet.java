@@ -61,11 +61,11 @@ public class UserSigninServlet extends HttpServlet {
                                     .build();        
             datastore.put(userEntity);
 
-            //redirect to userhomepage after successful signin
-            response.sendRedirect("/index1.html");
+            //script.js will redirect the client to the userhomepage after successful signin
+            
         } else {
             //redirect back to signin page when sign in fails
-            response.sendRedirect("/index.html");
+            response.sendRedirect("/login.html");
         }
   }
 }

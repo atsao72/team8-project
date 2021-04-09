@@ -38,3 +38,23 @@ function redirect(){
             window.location.href = response.url;
     });
 }
+
+function loadFiles() {
+  fetch('/uploaded-files').then(response => response.json()).then((files) => {
+    const fileElement = document.getElementById('files-list');
+    files.forEach((file) => {
+      fileElement.appendChild(createFileElement(file));
+    })
+  });
+}
+
+function createFileElement(file) {
+  const fileElement = document.createElement('li');
+  fileElement.className = 'file';
+
+  const nameElement = document.createElement('span');
+  nameElement.innerText = file.fileName;
+
+  fileElement.appendChild(nameElement);
+  return fileElement;
+}

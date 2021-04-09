@@ -33,7 +33,7 @@ public class RedirectServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/index1.html");
+        response.sendRedirect("/home-page.html");
   }
 }
 
