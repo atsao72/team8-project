@@ -65,7 +65,7 @@ public class UserSigninServlet extends HttpServlet {
             
         } else {
             //redirect back to signin page when sign in fails
-            response.sendRedirect("/login.html");
+            response.sendRedirect("/index.html");
         }
   }
 }

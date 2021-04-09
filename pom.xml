@@ -16,7 +16,7 @@
 
     <!-- Project-specific properties -->
     <exec.mainClass>com.google.sps.ServerMain</exec.mainClass>
-    <googleCloudProjectId>smwapinza-sps-spring21</googleCloudProjectId>
+    <googleCloudProjectId>spring21-sps-8</googleCloudProjectId>
   </properties>
 
   <dependencies>
