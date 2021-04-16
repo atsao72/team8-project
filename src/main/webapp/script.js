@@ -13,16 +13,48 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * function that retrieves the users's google id_token when they sign in
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function onSignIn(googleUser) {
+    // get user's googleId token which we will pass to the backend
+    const id_token = googleUser.getAuthResponse().id_token;
+    
+    const params = new URLSearchParams;
+    params.append('ID_token', id_token);
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    fetch('/sign-in', {method: 'POST', body: params})
+    .then(response => {
+       redirect();
+    });
+}
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+/*
+ *function to handle redirecting the user to their homepage after a successfull sign in
+ */
+function redirect(){
+    fetch('/redirect', {method: 'POST'})
+        .then(response => {
+            //window.location.replace(response.url);
+            window.location.href = response.url;
+    });
+}
+
+function loadFiles() {
+  fetch('/uploaded-files').then(response => response.json()).then((files) => {
+    const fileElement = document.getElementById('files-list');
+    files.forEach((file) => {
+      fileElement.appendChild(createFileElement(file));
+    })
+  });
+}
+
+function createFileElement(file) {
+  const fileElement = document.createElement('li');
+  fileElement.className = 'file';
+
+  const nameElement = document.createElement('span');
+  nameElement.innerText = file.fileName;
+
+  fileElement.appendChild(nameElement);
+  return fileElement;
 }

@@ -1,0 +1,22 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Home Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body onload="loadFiles()">
+  <h1>Your Files</h1>
+
+  <form method="POST" action="/new-dummy-file">
+    <input type="text" name="fileName" />
+    <br />
+    <button>Search</button>
+  </form>
+  <hr />
+
+  <ul id="files-list"></ul>
+
+</body>
+</html>
