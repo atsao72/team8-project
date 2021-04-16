@@ -8,8 +8,131 @@
   margin: 10px;
   padding: 10px;
   width: 300px;
+  text-decoration-color: #590808;
+  background-color: #E8C8C9;
 }
 
 .file span {
   flex-grow: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #EA7579;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: Arial;
+font-style: normal;
+font-weight: bold;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #FAC5C6;
+}
+
+body {background-color: #FFF3F4;}
+
+
+#icon { 
+  position: absolute;
+width: 364px;
+height: 341px;
+left: 500px;
+display: inline;
+}
+
+/* Bukit */
+
+#title {
+position: fixed;
+width: 587px;
+height: 287px;
+left: 88px;
+/* top: 206px; */
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 170px;
+line-height: 287px;
+
+color: #590808;
+
+}
+
+/* Put your files in a Bukit! */
+
+p {
+position: absolute;
+width: 223px;
+height: 21px;
+left: 100px;
+top: 320px;
+
+font-family: Arial;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 21px;
+
+color: #7A7474;
+}
+
+
+/* Sign-In button */
+
+#sign-in {
+position: absolute;
+left: 100px;
+top: 400px;
+
+}
+.titles{
+  position: fixed;
+  display: inline;
+/* top: 82px; */
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+
+color: #590808;
+
+}
+
+.icon-t {
+display: inline;
+width: 82px;
+height: 87px;
+float: right;
+}
+
+#sign-in2 {
+position: fixed;
+/* top: 400px; */
+
+display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: Arial;
+font-style: normal;
+font-weight: bold;
+  text-decoration: none;
+  background-color: #EA7579;
+  margin: 0;
 }

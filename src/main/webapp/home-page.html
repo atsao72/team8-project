@@ -7,13 +7,28 @@
 </head>
 
 <body onload="loadFiles()">
-  <h1>Your Files</h1>
-
-  <form method="POST" action="/new-dummy-file">
-    <input type="text" name="fileName" />
+    <ul>
+    <li><a href="index.html">Bukit</a></li>
+    <li><a href="home-page.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+    <div>
+  <h1 class="titles"> Your Bukit! </h1>
+  <img src="bucket.png" class="icon-t">
+  </div>
     <br />
-    <button>Search</button>
+  <br />
+  <br />
+  <div>
+  <form method="POST" action="/new-dummy-file">
+    <input style=" border-color: black;" type="text" name="fileName" />
+    <br>
+    <button id="sign-in2" onclick="alert('WARNING: This feature is in the works right now!')"> Search </button>
   </form>
+  <br>
+    <button id="sign-in2" style="top: 131px; left: 100px;"> <a href="GooglePicker.html">Upload New File</a> </button>
+</div>
+  <br>
   <hr />
 
   <ul id="files-list"></ul>

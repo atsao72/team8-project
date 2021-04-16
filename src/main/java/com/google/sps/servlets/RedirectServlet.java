@@ -1,4 +1,4 @@
-package main.java.com.google.sps.servlets;
+package com.google.sps.servlets;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
